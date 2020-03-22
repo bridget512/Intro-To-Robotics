@@ -1,7 +1,10 @@
 # Intro-To-Robotics
 
 Producing an Intelligent Robot / IoT system (40%)
-The purpose of this project is to produce an Intelligent robot, an autonomous vehicle, a smart home or any IoT system (we will call it a robot), using at least one Arduino board. Students may borrow ideas from a variety of commercial products (identifying references required). This group project requires 2-3 students to develop a device in a prototype format. Groups should establish a set time for meetings (at least one meeting per week) and record their progress as per the GROUP MEETING PROGRESS TRACKING FORM attached.
+The purpose of this project is to produce an Intelligent robot, an autonomous vehicle, a smart home or any IoT system (we will call it a robot), using at least one Arduino board. 
+
+Students may borrow ideas from a variety of commercial products (identifying references required). This group project requires 2-3 students to develop a device in a prototype format. Groups should establish a set time for meetings (at least one meeting per week) and record their progress as per the GROUP MEETING PROGRESS TRACKING FORM attached.
+
 1.	Project Requirements: 
 •	There must be a MINIMUM of three (3) types of sensors. 
 •	There must be no dangerous component included. The maximum power is 18v.

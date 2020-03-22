@@ -1,11 +1,11 @@
 # Intro-To-Robotics
 
-<b>Producing an Intelligent Robot / IoT system (40%)
+<b>Producing an Intelligent Robot / IoT system (40%)</b>
 The purpose of this project is to produce an Intelligent robot, an autonomous vehicle, a smart home or any IoT system (we will call it a robot), using at least one Arduino board. 
 
 Students may borrow ideas from a variety of commercial products (identifying references required). This group project requires 2-3 students to develop a device in a prototype format. Groups should establish a set time for meetings (at least one meeting per week) and record their progress as per the GROUP MEETING PROGRESS TRACKING FORM attached.
 
-<b>1.	Project Requirements: 
+<b>1.	Project Requirements: </b>
 
 •	There must be a MINIMUM of three (3) types of sensors. 
 
@@ -14,15 +14,15 @@ Students may borrow ideas from a variety of commercial products (identifying ref
 •	Implement at least two intelligent behaviours (obstacle avoidance, object detection or tracking, etc).
 
 
-<b>2.	Marking Scheme
+<b>2.	Marking Scheme</b>
 
 The Project Draft, Final Submission and Presentation will be assessed according to the following weights: 
 
-<b>Project Draft (5%, Due by Week6, 5pm Friday Apr 3)
+<b>Project Draft (5%, Due by Week6, 5pm Friday Apr 3)</b>
 
 •	Robot design document	(5%)
 
-<b>Robot Design (40 %) 
+<b>Robot Design (40 %) </b>
 
 •	Creative concepts	(10%)
 
@@ -34,7 +34,7 @@ The Project Draft, Final Submission and Presentation will be assessed according 
 
 •	Information feedback system.	(5%)
 
-<b>Programming (40 %)
+<b>Programming (40 %)</b>
 
 •	Appropriate and a variety of use of commands (must be bug/error free)	(15%)
 
@@ -44,11 +44,11 @@ The Project Draft, Final Submission and Presentation will be assessed according 
 
 •	Appropriate comments	(5%)
 
-<b>Synopsis Report (10%, in PDF, DOC or HTML)
+<b>Synopsis Report (10%, in PDF, DOC or HTML)</b>
 
 All these items are mandatory for the documentation. 0/10 if any are missing.
 
-<b>The report structure should be in the order of the below:
+<b>The report structure should be in the order of the below:</b>
 
 •	Introduction (Objectives, Genre, Target Users). 	(1%)
 
@@ -68,7 +68,7 @@ All these items are mandatory for the documentation. 0/10 if any are missing.
 
 Presentations (5%, during the week 12 Workshops)	(5%)
 
-<b>3.	Other Conditions (maximum penalty)
+<b>3.	Other Conditions (maximum penalty)</b>
  
 •	Students are responsible for errors, virus infection, lost files, etc. KEEP A BACKUP ALWAYS (100% penalty).
 
@@ -78,17 +78,17 @@ Presentations (5%, during the week 12 Workshops)	(5%)
 
 •	Synopsis credit pages will include the role of each team member, students’ photos, contact details and references. 
 
-<b>Important Dates:
+<b>Important Dates:</b>
  
 (Week6) 5pm, Friday April 3 - submission of your group list and a project draft (group submission):
 
-<b>•	The draft version should include:
+<b>•	The draft version should include:</b>
 
 -	Group members (student names and numbers), (tentative) Title, Aims, Target users,
 
 -	Your design concepts and components to use.
 
-<b>(Week10) during your workshop – Alpha Build Presentation
+<b>(Week10) during your workshop – Alpha Build Presentation</b>
  
 •	Zero marks for this component but failure to present your alpha version will incur a 10% penalty. The Lecturer and Instructor will provide you with some comments on your work.
 
@@ -101,7 +101,7 @@ Workshops in Week 12 – project presentation
 13-14, Nov 2020 – Robotics Challenge (Line Tracing, Obstacle Avoidance, Sumo, Innovative Challenge,…)
 WIT2020: https://ausrobotics.org/events/wit2020/
 
-<b>Notes:
+<b>Notes:</b>
 -	All Submissions to the Learning@Griffith website.
 -	Start your project as soon as possible. The lab will be very busy from around week 9.
 -	Each group should have group meetings, at least once a week.

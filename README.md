@@ -6,37 +6,66 @@ The purpose of this project is to produce an Intelligent robot, an autonomous ve
 Students may borrow ideas from a variety of commercial products (identifying references required). This group project requires 2-3 students to develop a device in a prototype format. Groups should establish a set time for meetings (at least one meeting per week) and record their progress as per the GROUP MEETING PROGRESS TRACKING FORM attached.
 
 1.	Project Requirements: 
+
 •	There must be a MINIMUM of three (3) types of sensors. 
+
 •	There must be no dangerous component included. The maximum power is 18v.
+
 •	Implement at least two intelligent behaviours (obstacle avoidance, object detection or tracking, etc).
 
+
 2.	Marking Scheme
+
 The Project Draft, Final Submission and Presentation will be assessed according to the following weights: 
 Project Draft (5%, Due by Week6, 5pm Friday Apr 3)
+
 •	Robot design document	(5%)
 Robot Design (40 %) 
+
 •	Creative concepts	(10%)
+
 •	Well balanced use of components.	(10%)
+
 •	Usability, interface elements, 	(10%)
+
 •	Clear, logical and interesting behaviour	(5%)
+
 •	Information feedback system.	(5%)
+
 Programming (40 %)
+
 •	Appropriate and a variety of use of commands (must be bug/error free)	(15%)
+
 •	Intelligent behaviour developed by the team.	(15%)
+
 •	Design concepts to be well reflected.	(5%)
+
 •	Appropriate comments	(5%)
+
 Synopsis Report (10%, in PDF, DOC or HTML)
+
 All these items are mandatory for the documentation. 0/10 if any are missing.
+
 The report structure should be in the order of the below:
+
 •	Introduction (Objectives, Genre, Target Users). 	(1%)
+
 •	The robot components used.	(1%)
+
 •	The key points of my ideas compared to other similar devices. 	(1%)
+
 •	Identify algorithms or AI developed by your team (in diagram or pseudo codes).	(2%)
+
 •	Flowchart of the robot structure.	(1%)
+
 •	Instruction to play.	(1%)
+
 •	Credit pages: information for each team member.	(1%)
+
 •	Log book showing your teamwork progress.	(1%)
+
 Presentations (5%, during the week 12 Workshops)	(5%)
+
  
 
 3.	Other Conditions (maximum penalty)

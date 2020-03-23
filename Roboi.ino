@@ -1,77 +1,84 @@
+//Motor Controller
+#include <SparkFun_TB6612.h>
+#define PWMA 11
+#define AIN2 10
+#define AIN1 9
+#define STBY 8
+#define BIN1 3
+#define BIN2 5
+#define PWMB 6
 
-// Motor Pins
-int motor_left = 4;
-int motor_right = 5;
+const int offsetA = -1;
+const int offsetB = -1;
+
+Motor motor1 = Motor(AIN1, AIN2, PWMA, offsetA, STBY);
+Motor motor2 = Motor(BIN1, BIN2, PWMB, offsetB, STBY);
 
 // HC-SR04 (NewPing Library Single Pin Mode)
 #include <NewPing.h>
-#define maxDistance 400
-
-#define sensorFrontPin 7 // Shared pin for Trigger and Echo
+#define maxDistance 500
+#define sensorFrontPin 2 // Shared pin for Trigger and Echo
 NewPing sensorFrontPing(sensorFrontPin, sensorFrontPin, maxDistance);
 
 int sensorFront;
+int sensorFrontValue; // Final output passed to the loop
+
+// Sketch wide variables
+
 
 //========================================================== Setup()
 
 void setup(){ 
-  
-  pinMode(motor_left, OUTPUT);
-  pinMode(motor_right, OUTPUT);
-
-  Serial.begin(9600);
-  
+  Serial.begin(115200);
 } //void setup
 
 //========================================================== Movement
 
 void forward(){
-  digitalWrite(motor_left, HIGH);
-  digitalWrite(motor_right, HIGH);
-}
-
-void halt(){
-  digitalWrite(motor_left, LOW);
-  digitalWrite(motor_right, LOW);
+  forward(motor1, motor2, 200);
+  Serial.println("Forward!");
 }
 
 void right(){
-  digitalWrite(motor_left, HIGH);
-  digitalWrite(motor_right, LOW);
+  motor1.drive(255);
+  Serial.println("Turning Right!");
 }
 
 void left(){
-  digitalWrite(motor_left, LOW);
-  digitalWrite(motor_right, HIGH);
+  motor2.drive(255);
+  Serial.println("Turning Left!");
 }
+
+void brake(){
+  brake(motor1, motor2);
+}
+
+int sensor(int sensorFront){
+  sensorFront = sensorFrontPing.ping_cm(); 
+  return sensorFront; 
+}
+
 
 //========================================================== Loop()
 
 void loop() {
-delay(100);
 
-sensorFront = sensorFrontPing.ping_cm();
-Serial.println(sensorFront);
+  sensorFrontValue = sensor(sensorFront);
+  Serial.println(sensorFrontValue);
 
-  if(sensorFront > 0 && sensorFront >= 15){
-    forward();
+  if(sensorFrontValue > 0 && sensorFrontValue >= 25){
+    forward(); 
+  }
+
+  else if( sensorFrontValue > 5 && sensorFrontValue <= 25){
+    brake();
+    right();
   }
 
   else{
-    halt();
+    brake();
   }
 
-
+delay(25);
+  
 } // void loop
-
-
-
-
-
-/* ======================================== Current Issues ::
-
-
-
-
-
-========================================================== */

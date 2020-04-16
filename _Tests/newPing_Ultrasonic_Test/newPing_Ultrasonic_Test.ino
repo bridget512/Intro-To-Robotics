@@ -1,9 +1,10 @@
-#include <NewPing.h>
+#include <NewPing.h> // You need to install this library. 
+//Go to "Tools" ^^ > "Manage libraries" > Search For "newping" > Click "Install"
 
-// Yes, they're both on pin 7. Not a typo!
-#define trig01 7
-#define echo01 7
-#define maxDistance 200
+// Yes, they're both on the same pin. Not a typo! It's pretty cool.
+#define trig01 2
+#define echo01 2
+#define maxDistance 400
 
 NewPing sensor01(trig01, echo01, maxDistance);
 

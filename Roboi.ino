@@ -98,17 +98,21 @@ void setup(){
   
   Serial.begin(9600);
   //BTserial.begin(9600);
-  
+
+  // Servo
   myservo.attach(servoPin);  
   myservo.write(servoCenter); 
 
+  // LED Dot Matrix
   lc.shutdown(0,false);      //The MAX72XX is in power-saving mode on startup
   lc.setIntensity(0,1);      // Set the brightness to maximum value
   lc.clearDisplay(0);        // and clear the display
 
+  // Capacitive Touch Sensor
   pinMode(touchButtonPin, INPUT);
   pinMode(STBY, OUTPUT);
 
+  // IR Obstacle Sensor
   pinMode(irLeftPin, INPUT);
   pinMode(irRightPin, INPUT);
 
@@ -133,6 +137,7 @@ void loop() {
   int choice;
   int proxMin = 20;
 
+// If the robot comes to a wall, turn servo and get the distance. Largest distance wins.
  if(sensorFrontDistance >= 1 && sensorFrontDistance <= proxMin){
   
   brake();
@@ -158,7 +163,10 @@ void loop() {
 
 }
 
-side();
+// Runs the code for the IR sensors. Used as object avoidance
+ir_frontCorners();
+
+// If the robot scans left and right and the distances are less than the minimum proximitiy distance, turn around
 //========================================================== Dead End
   if(sensorFrontDistance >= 1 && sensorFrontDistance <= proxMin && 
      distanceR <= proxMin && distanceL <= proxMin){
@@ -180,6 +188,7 @@ side();
     
   }
 
+// Might remove this, it's annoying and doesn't work very well, but I do like the extra animation. But, it moves the servo 45deg-ish and takes a distance reading.
 //========================================================== Distance Sweep Scan
 if(enable_sweep == true){
   if (isMovingForward = true){
@@ -212,14 +221,15 @@ if(enable_sweep == true){
   }
 }
 
-
+// Sometimes the front sensor throws zeros. 
 //========================================================== Ultrasonic zero value handling
   else if(sensorFrontDistance == 0 ){
-    //scanF();
     if(debug == true){Serial.println("Error: Random Zero");}
   }
 
 //========================================================== Touch Sensor
+
+// If the sensor is touched while moving, the robot will stop and be sad
 if(isMovingForward == true && touchButtonState == HIGH){
   Serial.println("Touch: You booped me!");
   isMovingForward = false;
@@ -229,6 +239,7 @@ if(isMovingForward == true && touchButtonState == HIGH){
   forward();
 }
 
+// Time passed tests
 //========================================================== 
 //else if(sensorFrontDistance <= 15){
 //  timepassed = 0;
@@ -246,7 +257,7 @@ if(isMovingForward == true && touchButtonState == HIGH){
 //    right();
 //  }
 //}
-//
+
 
 // This is the default forward for the loop, don't move me!
 else{
@@ -303,7 +314,7 @@ int sensor(int sensorFront){
   delay(50);
   sensorFront = sensorFrontPing.ping_cm(); 
   if(sensorFront == 0){
-    sensorFront = 250;
+    sensorFront = maxDistance;
   }
   return sensorFront; 
 }
@@ -327,13 +338,6 @@ int scanLeft90(){
   delay(50);
   myservo.write(servoCenter);
   if(debug == true){Serial.println(scanDistance);}
-  return scanDistance;
-}
-
-int scanF(){
-  Serial.println("Vision: Scanning Front!");
-  int scanDistance = sensor(sensorFront);
-  delay(50);
   return scanDistance;
 }
 
@@ -368,28 +372,21 @@ void printByte(byte character []){
   }
 }
 
-//========================================================== Bluetooth - not working yet
-
-//void bluetooth(){
-//  while (!BTserial.available());
-//  BTcommand = BTserial.read();
-
-
-void side(){
-irLeft = digitalRead(irLeftPin);
-irRight = digitalRead(irRightPin);
+//========================================================== IR Obstacle Sensors
+void ir_frontCorners(){
+  irLeft = digitalRead(irLeftPin);
+  irRight = digitalRead(irRightPin);
 
   if(isMovingForward == true && irLeft == LOW){
-    Serial.println("Too close on left side! ");
+    Serial.println("Too close on left ir_frontCorners! ");
     isMovingForward = false;
     motor1.drive(motorSpeed - 50);
     motor2.drive(-motorSpeed -50);
     delay(250);
-
   }
 
   if(isMovingForward == true && irRight == LOW){
-    Serial.println("Too close on right side! ");
+    Serial.println("Too close on right ir_frontCorners! ");
     isMovingForward = false;
     motor1.drive(-motorSpeed - 50);
     motor2.drive(motorSpeed - 50);
@@ -397,3 +394,8 @@ irRight = digitalRead(irRightPin);
   }
 
 }
+
+//========================================================== Bluetooth - not working yet, probably wont
+//void bluetooth(){
+//  while (!BTserial.available());
+//  BTcommand = BTserial.read();

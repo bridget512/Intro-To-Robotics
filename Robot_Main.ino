@@ -87,7 +87,7 @@ int touchButtonState = LOW;
 //========================================================== Piezo Speaker I2C to Arduino
 #include <Wire.h>
 #define SLAVE_ADDR 9
-int val;
+int playSoundNumber;
 
 //========================================================== Bluetooth
 //#include <SoftwareSerial.h>
@@ -120,7 +120,7 @@ void setup(){
   // IR Obstacle Sensor
   pinMode(irLeftPin, INPUT);
   pinMode(irRightPin, INPUT);
-  val = 1;
+  playSoundNumber = 1;
 
 } //void setup
 
@@ -133,7 +133,7 @@ void loop() {
 //  BTcommand = BTserial.read();
 //  Serial.println(BTcommand);
   Wire.beginTransmission(SLAVE_ADDR);
-  Wire.write(val);
+  Wire.write(playSoundNumber);
   Wire.endTransmission();
 
   touchButtonState = digitalRead(touchButtonPin);
@@ -179,10 +179,10 @@ ir_frontCorners();
   if(sensorFrontDistance >= 1 && sensorFrontDistance <= proxMin && 
      distanceR <= proxMin && distanceL <= proxMin){
       
-    val = 3;
+    playSoundNumber = 3;
     
     Wire.beginTransmission(SLAVE_ADDR);
-    Wire.write(val);
+    Wire.write(playSoundNumber);
     Wire.endTransmission();
     
     Serial.println("Action: Dead End! Turning around!");
@@ -214,8 +214,8 @@ ir_frontCorners();
 // If the sensor is touched while moving, the robot will stop and be matrix_sad
 if(isMovingForward == true && touchButtonState == HIGH){
   Serial.println("Touch: You booped me!");
-  val = 2;
-  Serial.println(val);
+  playSoundNumber = 2;
+  Serial.println(playSoundNumber);
   isMovingForward = false;
   printByte(matrix_sad);
   brake();
@@ -226,7 +226,7 @@ if(isMovingForward == true && touchButtonState == HIGH){
 // This is the default forward for the loop, don't move me!
 else{
   forward();
-  val = 0;
+  playSoundNumber = 0;
 }
   
   sensorFrontDistance;

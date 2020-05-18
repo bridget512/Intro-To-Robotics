@@ -33,8 +33,9 @@ void loop() {
 
 
 void powerUp(){
-  int note[] = {Re,Mi, Re};
-  int duration[] = {150, 150, 150}; //Make sure you have a duration for each note you want to play
+  int note[] = {Re, Mi, Re};
+  int duration[] = {150, 150, 150}; 
+  //Make sure you have a duration for each note you want to play
 
   Serial.println("Sound: I'm Awake!!");
   for (int i = 0; i < (sizeof(note) / 2); i++){  

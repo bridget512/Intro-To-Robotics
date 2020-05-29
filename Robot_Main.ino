@@ -1,6 +1,5 @@
 //==========================================================
-// Robot project for Introduction to Robotics -1711ICT
-// Bridget, Cecilia, Macy
+// Robot project for Introduction to Robotics
 //==========================================================
 // Pin Setup for Mega2560
 
